@@ -1,10 +1,11 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        hashmap = {}
-
+        board = {}
         for i, n in enumerate(nums):
-            diff = target-n
-            if diff in hashmap:
-                return [hashmap[diff], i]
-            hashmap[n]=i
-        return
+            need = target - n
+            if need in board:
+                return [board[need], i]
+            board[n] = i
+        return [board[n],[need]]
+
+        
